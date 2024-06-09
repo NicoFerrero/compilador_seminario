@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "antlr4": "^4.13.1-patch-1",
+    "prompt": "^1.3.0"
+  },
+  "name": "tp_seminario",
+  "version": "1.0.0",
+  "main": "HelloLexer.js",
+  "scripts": {
+    "start": "node prueba.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}

@@ -1,0 +1,7 @@
+void main() [
+    a = {1,5,8,7}
+    calcular(3,7)
+]
+int function calcular(int x, int y=10, string arr){
+    r = x + y
+}
