@@ -6,7 +6,7 @@ import fs from 'fs'
 
 class ExprErrorListener extends antlr4.error.ErrorListener {
     syntaxError(recognizer, offendingSymbol, line, column, msg, err) {
-        console.log(`${offendingSymbol} line ${line}, col ${column}: ${msg}`);
+        console.log(`line ${line}, col ${column}: ${msg}`);
         throw Error("Error parsing")
     }
 }
@@ -22,12 +22,15 @@ fs.readFile('./' + archivo + '.txt', 'utf-8', (err, data) => {
     try {
         const chars = new antlr4.InputStream(data);
         const lexer = new HelloLexer(chars);
+        lexer.removeErrorListeners();
+        lexer.addErrorListener(new ExprErrorListener());
         const tokens = new antlr4.CommonTokenStream(lexer);
         const parser = new HelloParser(tokens);
         parser.buildParseTrees = true;
         parser.removeErrorListeners();
         parser.addErrorListener(new ExprErrorListener());
         const tree = parser.program();
+
         if (tree.exception != null) {
             throw Error("Error Parsing")
         } else {

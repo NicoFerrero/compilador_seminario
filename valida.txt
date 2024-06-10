@@ -1,0 +1,17 @@
+int function calcular(int x, int y = 10, string arr)[
+    z = x**4
+    i = 0
+    while (i < z -y) do
+        r = r + arr[i]
+        i++
+    endwhile
+    return r
+]
+
+void main()[
+    a ={1,2,8,4,6}
+    resultado = calcular(4,5,a)
+    if (resultado > 0) do
+        show (resultado)
+    else show ("error")
+]
